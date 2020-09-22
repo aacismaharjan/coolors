@@ -1,14 +1,23 @@
 import React from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 export default function Navigation() {
   return (
     <Navbar bg='dark' variant='dark'>
-      <Navbar.Brand href='#random'>Coolors</Navbar.Brand>
+      <Link to='/' className='navbar-brand'>
+        Coolors
+      </Link>
       <Nav className='ml-auto'>
-        <Nav.Link href='#random'>Random</Nav.Link>
-        <Nav.Link href='#popular'>Popular</Nav.Link>
-        <Nav.Link href='#professional'>Professional</Nav.Link>
+        <Link to='/random' className='nav-link'>
+          Random
+        </Link>
+        <Link to='/popular' className='nav-link'>
+          Popular
+        </Link>
+        <Link to='/' className='nav-link'>
+          Professional
+        </Link>
       </Nav>
     </Navbar>
   )

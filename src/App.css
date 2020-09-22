@@ -30,6 +30,8 @@
 .card-color .color-name .card-title {
   font-size: 16px;
   color: white;
+  /* -webkit-text-stroke: 0.25px black; */
+  text-shadow: 0.5px 1px 1px rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
   margin-bottom: 0;
 }
