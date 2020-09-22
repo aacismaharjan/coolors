@@ -36,7 +36,7 @@ export default class Random extends Component {
     return color
   }
 
-  getAllPossibleColors = (max) => {
+  getRandomColors = (max) => {
     let colors = []
     for (let i = 0; i < max; i++) {
       colors.push(this.getRandomColorPalette())
@@ -45,6 +45,6 @@ export default class Random extends Component {
   }
 
   render() {
-    return <Colors colors={this.getAllPossibleColors(1500)} />
+    return <Colors colors={this.getRandomColors(1000)} />
   }
 }

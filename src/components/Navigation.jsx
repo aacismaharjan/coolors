@@ -9,14 +9,11 @@ export default function Navigation() {
         Coolors
       </Link>
       <Nav className='ml-auto'>
-        <Link to='/random' className='nav-link'>
+        <Link to='/' className='nav-link'>
           Random
         </Link>
         <Link to='/popular' className='nav-link'>
-          Popular
-        </Link>
-        <Link to='/' className='nav-link'>
-          Professional
+          HTML Colors
         </Link>
       </Nav>
     </Navbar>

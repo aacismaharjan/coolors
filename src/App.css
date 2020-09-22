@@ -1,7 +1,7 @@
 /* Card */
 .card-container {
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 15px;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
@@ -12,6 +12,20 @@
   border: none;
   border-radius: 5px;
   overflow: hidden;
+  animation: fadeIn 0.25s linear forwards;
+  transform-origin: top;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }
 
 .card-color .color-img {
