@@ -1,3 +1,17 @@
+.one-page {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.colors-container {
+  flex: 1;
+  overflow-y: scroll;
+}
+
 /* Card */
 .card-container {
   display: grid;
@@ -5,9 +19,74 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
+#color-copy-toast {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 999;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: red;
+  transition: 0.5s ease all;
+  text-transform: uppercase;
+}
+
+#color-copy-toast h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  width: 100%;
+  text-shadow: 0 5px 10px 10px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+  animation: animate 1s linear forwards;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+
+  20% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+
+  90% {
+    transform: scale(1.025);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+#color-copy-toast h5 {
+  width: 100%;
+  position: absolute;
+  bottom: 20px;
+  left: 0px;
+  text-align: center;
+  text-shadow: 0 5px 10px 10px rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+}
+
 .card-color {
   position: relative;
   width: 100%;
+  height: 100%;
   cursor: pointer;
   border: none;
   border-radius: 5px;
@@ -18,12 +97,10 @@
 
 @keyframes fadeIn {
   0% {
-    transform: scaleY(0);
     opacity: 0;
   }
 
   100% {
-    transform: scaleY(1);
     opacity: 1;
   }
 }
@@ -48,4 +125,8 @@
   text-shadow: 0.5px 1px 1px rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
   margin-bottom: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }

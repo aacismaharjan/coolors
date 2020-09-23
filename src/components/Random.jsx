@@ -21,6 +21,8 @@ export default class Random extends Component {
       'E',
       'F',
     ],
+    colors: [],
+    rgbColors: [],
   }
 
   getRandomHexValues = (values) => {
@@ -44,7 +46,23 @@ export default class Random extends Component {
     return colors
   }
 
+  getRgbValues() {
+    let colors = this.state.colors
+    return colors.map((color) => {
+      let r = color.slice(1, 3)
+      let g = color.slice(3, 5)
+      let b = color.slice(5, 7)
+
+      return `rgb(${parseInt(r, 16)},${parseInt(g, 16)}, ${parseInt(b, 16)})`
+    })
+  }
+
+  componentDidMount() {
+    this.setState({ colors: this.getRandomColors(100) })
+  }
+
   render() {
-    return <Colors colors={this.getRandomColors(1000)} />
+    if (this.state.colors.length) return <Colors colors={this.getRgbValues()} />
+    return <Colors colors={this.state.colors} />
   }
 }

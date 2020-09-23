@@ -5,18 +5,22 @@ import Navigation from './components/Navigation'
 import Random from './components/Random'
 import Popular from './components/Popular'
 import { Route, Switch } from 'react-router-dom'
+import Footer from './components/Footer'
 
 class App extends Component {
   render() {
     return (
-      <>
+      <div className='one-page'>
         <Navigation />
-        <Switch>
-          <Route exact path='/' component={Random} />
-          <Route exact path='/random' component={Random} />
-          <Route exact path='/popular' component={Popular} />
-        </Switch>
-      </>
+        <div className='colors-container'>
+          <Switch>
+            <Route exact path='/' component={Random} />
+            <Route exact path='/random' component={Random} />
+            <Route exact path='/popular' component={Popular} />
+          </Switch>
+        </div>
+        <Footer />
+      </div>
     )
   }
 }

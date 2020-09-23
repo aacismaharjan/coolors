@@ -11,7 +11,7 @@ export default class Colors extends Component {
     let colorInterval = setInterval(() => {
       if (i >= this.props.colors.length - 1) clearInterval(colorInterval)
       this.setState({ colors: [...this.state.colors, this.props.colors[i++]] })
-    }, 100)
+    }, 50)
   }
 
   render() {
