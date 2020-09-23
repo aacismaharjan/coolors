@@ -20,7 +20,7 @@ const handleCopyToClipboard = (str) => {
 
 export default function Color({ hex }) {
   const context = useContext(DataContext)
-  const { audio } = context
+  const { audio, handleCopied } = context
   const [isClick, setIsClick] = useState(false)
   const [msg, setMsg] = useState('')
 
@@ -47,10 +47,10 @@ export default function Color({ hex }) {
 
   const handleClick = (e) => {
     setIsClick(true) // Poping Model box
-    console.log(audio)
     audio && handleSelectedAudio() // Select Audio Effect
     handleRandomMsg() // Random Poping Msg
     handleCopyToClipboard(colorValue) // Copies to Clipboard
+    handleCopied(colorValue)
 
     let intervalId = setTimeout(function () {
       clearTimeout(intervalId)

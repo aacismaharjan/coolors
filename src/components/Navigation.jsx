@@ -12,6 +12,9 @@ export default function Navigation() {
         <Link to='/' className='nav-link'>
           Random
         </Link>
+        <Link to='/compliments' className='nav-link'>
+          Compliments
+        </Link>
         <Link to='/popular' className='nav-link'>
           HTML Colors
         </Link>

@@ -51,15 +51,8 @@ export default class Random extends Component {
   }
 
   getRgbValues(colors) {
-    let modified = colors.map((color) => {
-      let r = color.slice(1, 3)
-      let g = color.slice(3, 5)
-      let b = color.slice(5, 7)
-
-      return `rgb(${parseInt(r, 16)},${parseInt(g, 16)}, ${parseInt(b, 16)})`
-    })
-
-    return modified
+    const { convertHexToRgb } = this.context
+    return colors.map((color) => convertHexToRgb(color))
   }
 
   componentDidMount() {
@@ -85,7 +78,7 @@ export default class Random extends Component {
   }
 
   render() {
-    const { system } = this.context
+    const { system = '#HEXCODE' } = this.context
 
     return (
       <Colors

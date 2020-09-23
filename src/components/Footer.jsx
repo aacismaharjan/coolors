@@ -17,10 +17,7 @@ export default function Footer() {
         <div className='row align-items-center justify-content-between'>
           <div className='col-md-6 col-sm-9'>
             <Form className='d-flex'>
-              <Form.Group
-                controlId='exampleForm.ControlSelect1'
-                className='d-flex m-0 mr-3 align-items-center'
-              >
+              <Form.Group className='d-flex m-0 mr-3 align-items-center'>
                 <Form.Label className='m-0 mr-2 text-white'>
                   System:{' '}
                 </Form.Label>
@@ -35,10 +32,7 @@ export default function Footer() {
                 </Form.Control>
               </Form.Group>
 
-              <Form.Group
-                controlId='exampleForm.ControlSelect1'
-                className='d-flex m-0 align-items-center'
-              >
+              <Form.Group className='d-flex m-0 align-items-center'>
                 <Form.Label className='m-0 mr-2 text-white'>Max:</Form.Label>
                 <Form.Control
                   as='select'
