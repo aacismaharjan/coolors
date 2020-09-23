@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <div className='one-page'>
         <Navigation />
-        <div className='colors-container'>
+        <div className='colors-container my-2'>
           <Switch>
             <Route exact path='/' component={Random} />
             <Route exact path='/random' component={Random} />

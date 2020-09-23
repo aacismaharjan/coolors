@@ -7,6 +7,10 @@ export default class Colors extends Component {
   }
 
   componentDidMount() {
+    this.handleAnimation()
+  }
+
+  handleAnimation() {
     let i = 0
     let colorInterval = setInterval(() => {
       if (i >= this.props.colors.length - 1) clearInterval(colorInterval)
@@ -14,9 +18,15 @@ export default class Colors extends Component {
     }, 50)
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.colors !== this.props.colors) {
+      this.setState({ colors: this.props.colors })
+    }
+  }
+
   render() {
     const colors = this.state.colors.map((color, i) => (
-      <Color key={color} hex={color} />
+      <Color key={i} hex={color} />
     ))
 
     return (

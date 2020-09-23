@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import Colors from './Colors'
+import { DataContext } from '../Context'
 
 export default class Random extends Component {
+  static contextType = DataContext
+
   state = {
     hexValues: [
       '0',
@@ -22,7 +25,8 @@ export default class Random extends Component {
       'F',
     ],
     colors: [],
-    rgbColors: [],
+    modified: [],
+    max: 0,
   }
 
   getRandomHexValues = (values) => {
@@ -46,23 +50,55 @@ export default class Random extends Component {
     return colors
   }
 
-  getRgbValues() {
-    let colors = this.state.colors
-    return colors.map((color) => {
+  getRgbValues(colors) {
+    let modified = colors.map((color) => {
       let r = color.slice(1, 3)
       let g = color.slice(3, 5)
       let b = color.slice(5, 7)
 
       return `rgb(${parseInt(r, 16)},${parseInt(g, 16)}, ${parseInt(b, 16)})`
     })
+
+    return modified
   }
 
   componentDidMount() {
-    this.setState({ colors: this.getRandomColors(100) })
+    const { max } = this.context
+    this.setState({ max: max })
+    const colors = this.getRandomColors(max)
+    this.setState({
+      colors,
+      modified: colors,
+    })
+  }
+
+  componentDidUpdate(prevProps) {
+    const { max } = this.context
+    if (this.state.max !== max) {
+      this.setState({ max: max })
+      const colors = this.getRandomColors(max)
+      this.setState({
+        colors,
+        modified: colors,
+      })
+    }
   }
 
   render() {
-    if (this.state.colors.length) return <Colors colors={this.getRgbValues()} />
-    return <Colors colors={this.state.colors} />
+    const { system } = this.context
+    let colors = this.state.colors
+    if (system === 'RGB') {
+    }
+
+    console.log(this.state)
+    return (
+      <Colors
+        colors={
+          system === 'RGB'
+            ? this.getRgbValues(this.state.colors)
+            : this.state.colors
+        }
+      />
+    )
   }
 }
