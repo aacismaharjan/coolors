@@ -5,6 +5,7 @@ class DataProvider extends Component {
   state = {
     system: '#HEXCODE',
     max: 20,
+    audio: true,
   }
 
   handleSystemChange = (e) => {
@@ -15,6 +16,10 @@ class DataProvider extends Component {
     this.setState({ max: parseInt(e.target.value) })
   }
 
+  handleAudioChange = (e) => {
+    this.setState({ audio: e.target.checked })
+  }
+
   render() {
     return (
       <DataContext.Provider
@@ -22,6 +27,7 @@ class DataProvider extends Component {
           ...this.state,
           handleSystemChange: this.handleSystemChange,
           handleMaxChange: this.handleMaxChange,
+          handleAudioChange: this.handleAudioChange,
         }}
       >
         {this.props.children}

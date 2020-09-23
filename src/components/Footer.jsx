@@ -4,7 +4,12 @@ import { DataContext } from '../Context'
 
 export default function Footer() {
   const context = useContext(DataContext)
-  const { handleSystemChange, handleMaxChange } = context
+  const {
+    handleSystemChange,
+    handleMaxChange,
+    handleAudioChange,
+    audio,
+  } = context
 
   return (
     <footer className='bg-secondary'>
@@ -39,21 +44,36 @@ export default function Footer() {
                   as='select'
                   size='sm'
                   name='system'
+                  className='mr-2'
                   onChange={(e) => handleMaxChange(e)}
                 >
                   <option>20</option>
                   <option>100</option>
                   <option>500</option>
-                  <option>2000</option>
-                  <option>5000</option>
+                  <option>1500</option>
+                  <option>3000</option>
                 </Form.Control>
               </Form.Group>
+
+              <Form.Check
+                inline
+                label='Audio'
+                className='text-white'
+                type='checkbox'
+                id='color-pick-audio'
+                defaultChecked={audio}
+                onClick={(e) => handleAudioChange(e)}
+              />
             </Form>
           </div>
 
           <div className='col-md-3 col-sm-6'>
             <p className='text-white text-right mb-0 ml-auto'>
-              Made with 🖤 by Aashish
+              Made with{' '}
+              <span role='img' aria-label='Heart'>
+                🖤
+              </span>{' '}
+              by Aashish
             </p>
           </div>
         </div>

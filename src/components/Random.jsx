@@ -86,11 +86,7 @@ export default class Random extends Component {
 
   render() {
     const { system } = this.context
-    let colors = this.state.colors
-    if (system === 'RGB') {
-    }
 
-    console.log(this.state)
     return (
       <Colors
         colors={
