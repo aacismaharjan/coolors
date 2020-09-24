@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1acece769c41ffef96b3bd748cf084de",
+    "revision": "335a96ee6acb461c477bdff6616d2f0e",
     "url": "/coolors/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/coolors/static/css/2.d9ad5f5c.chunk.css"
   },
   {
-    "revision": "16709b60403031e5ca2c",
+    "revision": "3bd5d18942b244b45385",
     "url": "/coolors/static/css/main.a2ce126c.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/coolors/static/js/2.3799329b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "16709b60403031e5ca2c",
-    "url": "/coolors/static/js/main.b3439c24.chunk.js"
+    "revision": "3bd5d18942b244b45385",
+    "url": "/coolors/static/js/main.f2a7fe21.chunk.js"
   },
   {
     "revision": "c83be0cd993b6ad998e9",
