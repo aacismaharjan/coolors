@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/coolors/static/css/main.a2ce126c.chunk.css",
+    "main.js": "/coolors/static/js/main.b3439c24.chunk.js",
+    "main.js.map": "/coolors/static/js/main.b3439c24.chunk.js.map",
+    "runtime-main.js": "/coolors/static/js/runtime-main.acc02904.js",
+    "runtime-main.js.map": "/coolors/static/js/runtime-main.acc02904.js.map",
+    "static/css/2.d9ad5f5c.chunk.css": "/coolors/static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.3799329b.chunk.js": "/coolors/static/js/2.3799329b.chunk.js",
+    "static/js/2.3799329b.chunk.js.map": "/coolors/static/js/2.3799329b.chunk.js.map",
+    "index.html": "/coolors/index.html",
+    "precache-manifest.eb73e3929c000671cda689e7d1816b0b.js": "/coolors/precache-manifest.eb73e3929c000671cda689e7d1816b0b.js",
+    "service-worker.js": "/coolors/service-worker.js",
+    "static/css/2.d9ad5f5c.chunk.css.map": "/coolors/static/css/2.d9ad5f5c.chunk.css.map",
+    "static/css/main.a2ce126c.chunk.css.map": "/coolors/static/css/main.a2ce126c.chunk.css.map",
+    "static/js/2.3799329b.chunk.js.LICENSE.txt": "/coolors/static/js/2.3799329b.chunk.js.LICENSE.txt",
+    "static/media/select.mp3": "/coolors/static/media/select.eba816ab.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.acc02904.js",
+    "static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.3799329b.chunk.js",
+    "static/css/main.a2ce126c.chunk.css",
+    "static/js/main.b3439c24.chunk.js"
+  ]
+}
