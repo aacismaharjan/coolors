@@ -3,24 +3,14 @@ import { Card } from 'react-bootstrap'
 import Model from './Modal'
 import SelectedAudio from '../assets/select.mp3'
 import { DataContext } from '../Context'
-
-const handleCopyToClipboard = (str) => {
-  // Creating virtual textarea to select msg
-  let textArea = document.createElement('textarea')
-  textArea.value = str
-  document.body.appendChild(textArea)
-
-  // Selects the input and executes the 'COPY' command
-  textArea.select()
-  document.execCommand('copy')
-
-  // Removing virtual textarea
-  document.body.removeChild(textArea)
-}
+import { handleCopyToClipboard } from '../Utilities'
 
 export default function Color({ hex }) {
   const context = useContext(DataContext)
-  const { audio, handleCopied } = context
+  const {
+    settings: { audio },
+    handleCopied,
+  } = context
   const [isClick, setIsClick] = useState(false)
   const [msg, setMsg] = useState('')
 
@@ -33,7 +23,7 @@ export default function Color({ hex }) {
     'Got It!',
   ]
 
-  const colorValue = hex || 'dodgerblue'
+  const colorValue = hex || '#000000'
 
   const handleSelectedAudio = () => {
     let selectedSound = new Audio(SelectedAudio)
@@ -50,7 +40,7 @@ export default function Color({ hex }) {
     audio && handleSelectedAudio() // Select Audio Effect
     handleRandomMsg() // Random Poping Msg
     handleCopyToClipboard(colorValue) // Copies to Clipboard
-    handleCopied(colorValue)
+    handleCopied(colorValue) // Copies to State
 
     let intervalId = setTimeout(function () {
       clearTimeout(intervalId)
