@@ -8,7 +8,7 @@ import { DataProvider } from './Context'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router basename='/coolors'>
       <DataProvider>
         <App />
       </DataProvider>
